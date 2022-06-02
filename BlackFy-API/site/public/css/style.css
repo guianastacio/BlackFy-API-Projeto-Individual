@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+text-decoration: none;
+list-style: none;
+box-sizing: border-box;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+nav{
+    background: black;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+#barra{
+    
+    font-size: 22px;
+    color: #FFFF00;
+
+
+}
+
+.logo img{
+
+width: 200px;
+margin-top: 25px;
+margin-left: 33px;
+}
+
+nav .txt-nav{
+    color: #FFFF00;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+  a:active,a:hover{
+    background:  #7e7e00;
+    transition: .5s;
+}
+
+.css{
+    width: 100%;
+    height: 98vh;
+    background: url(../imgHome/song.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.motivo{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(100deg,#FFC727,#FFFF00 , black );
+    background-size: 300% 300%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cointainer-motivo{
+    height: 80%;
+	width: 45%;
+	margin-top: 40px;
+	margin-left: 6%;
+}
+
+.motivo-txt{
+    color: black;
+	font-size: 20px;
+	line-height: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.motivo-img img {
+	margin-top: 30px;
+	width: 600px;
+	height: 400px;
+}
+

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+text-decoration: none;
+list-style: none;
+box-sizing: border-box;
+
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+#barra{
+    
+    font-size: 22px;
+    color: #FFFF00;
+
+
+}
+
+nav{
+    background: black;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+width: 200px;
+margin-top: 25px;
+margin-left: 10px;
+}
+
+nav .txt-nav{
+    color: #FFFF00;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+  a:active,a:hover{
+    background:  #7e7e00;
+    transition: .5s;
+}
+
+    .origem{
+        width: 100%;
+        height: 90vh;
+        background: url(../imgOrigem/nayani-teixeira-wGjEiVTy6Z8-unsplash\ \(1\).jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .txt-origem{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.61);
+        
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .txt-origem div{
+        width: 800px;      
+    }
+
+    
+
+    #txt{
+        font-size: 20px;
+    }
+
+    
