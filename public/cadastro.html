@@ -28,36 +28,36 @@
             <h1>CADASTRE-SE</h1>
             <div class="Textfield">
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome">
+                <input type="text" name="nome" id="nome_input">
             </div>
             <div class="Textfield">
                 <label for="artista">artista preferido:</label>
-                <select id="">
+                <select id="artista">
                     <option>Selecione...</option>
-                    <option value="">Drake</option>
-                    <option value="">Kendrick Lamar</option>
-                    <option value="">Tyler,the Creator</option>
-                    <option value="">Froid</option>
-                    <option value="">Mano Brown</option>
+                    <option value="1">Drake</option>
+                    <option value="2">Kendrick Lamar</option>
+                    <option value="3">Tyler,the Creator</option>
+                    <option value="4">Froid</option>
+                    <option value="5">Mano Brown</option>
                 </select>
             </div>
             <div class="Textfield">
                 <label for="email">Email:</label>
-                <input type="text" name="Email">
+                <input type="text" name="Email" id="email_input">
             </div>
             <div class="Textfield">
                 <label for="descricao">Senha:</label>
-                <input type="password" name="senha">
+                <input type="password" name="senha" id="senha_input">
             </div>
             <div class="Textfield">
                 <label for="cpf">CPF:</label>
-                <input name="cpf">
+                <input name="cpf" id="cpf_input">
             </div>
             <div class="Textfield">
                 <label for="telefone">Telefone:</label>
-                <input name="telefone">
+                <input name="telefone" id="telefone_input">
             </div>
-            <button class="btn-cadastro">Enviar</button>
+            <button class="btn-cadastro" onclick="cadastrar()">Enviar</button>
         </div>
     </div>
 
@@ -65,3 +65,71 @@
 </body>
 
 </html>
+
+<script>
+    function cadastrar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var cpfVar = cpf_input.value;
+        var telVar = telefone_input.value;
+        var artistaVar = Number(artista.value);
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || cpfVar == "" || telVar == "" || artista == "") {
+            // cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            // finalizarAguardar();
+            return false;
+        }
+        else {
+            // setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                cpfServer: cpfVar,
+                telServer: telVar,
+                artistaServer: artistaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+</script>
