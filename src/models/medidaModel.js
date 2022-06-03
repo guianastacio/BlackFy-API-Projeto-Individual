@@ -61,8 +61,18 @@ function buscarMedidasEmTempoReal(idAquario) {
     return database.executar(instrucaoSql);
 }
 
+function artistasFavoritos() {
+
+    instrucaoSql = 'SELECT artista.nome , COUNT(Fkartista) AS votos from'+
+    ' usuario JOIN artista ON idartista = fkartista GROUP BY fkartista;'
+
+    return database.executar(instrucaoSql);
+
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
+    artistasFavoritos,
     buscarMedidasEmTempoReal
 }

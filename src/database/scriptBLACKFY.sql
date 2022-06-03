@@ -77,6 +77,7 @@ INSERT INTO Playlist VALUE
 
 -- SELECT 
 
+SELECT * FROM artista;
 SELECT * FROM usuario;
 SELECT * FROM postagem;
 SELECT * FROM musica;
@@ -88,3 +89,5 @@ SELECT descricao AS 'Descrição',nome AS 'Usuário' FROM postagem JOIN usuario 
 
 SELECT count(fkusuarioplay) AS 'Soma dos usuarios',count(fkmusicaPlay) AS 'Soma das musicas' FROM playlist JOIN usuario ON usuario.idusuario = playlist.fkusuarioplay 
 JOIN musica ON musica.idmusica = playlist.fkmusicaplay;
+
+SELECT artista.nome , COUNT(Fkartista) AS votos from usuario JOIN artista ON idartista = fkartista GROUP BY fkartista;
