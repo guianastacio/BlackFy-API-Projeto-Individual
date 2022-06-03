@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Dashboards</title>
+    <title>Black FY | Dashboards</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="dashboards.css">
     <script src="../js/funcoes.js"></script>
 
@@ -26,7 +26,7 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AcquaTec</h1>
+            <div class="dash-img"><img src="../imgOrigem/Black Fy.svg"></div>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -57,16 +57,18 @@
         </div>
 
         <div class="dash">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+
+            <!-- <div class="btns-dash">
+                O gráfico é chamado de acordo com o id (fk_aquario) do banco 
                 <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Aquario 1</button>
                 <button class="btn-chart btn-white" onclick="obterDadosGrafico(2)">Aquario 2</button>
                 <button class="btn-chart btn-white" onclick="obterDadosGrafico(3)">Aquario 3</button>
                 <button class="btn-chart btn-white" onclick="obterDadosGrafico(4)">Aquario 4</button>
-            </div>
+            </div> -->
+
             <div>
                 <h3 class="tituloGraficos">
-                    <span id="tituloAquario">123</span>
+                    <span id="tituloAquario">Artistas preferidos da galera</span>
                 </h3>
             </div>
             <div class="graph">
@@ -88,7 +90,7 @@
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    verificar_autenticacao();
+    // verificar_autenticacao();
 
     // function alterarTitulo(idAquario) {
     //     var tituloAquario = document.getElementById("tituloAquario")
@@ -141,9 +143,9 @@
             datasets: [
                 {
                     yAxisID: 'y-umidade',
-                    label: 'Umidade',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#32b9cd8f',
+                    label: 'Votos',
+                    borderColor: '#FFFF00',
+                    backgroundColor: '#FFC727',
                     fill: true,
                     data: []
                 }
