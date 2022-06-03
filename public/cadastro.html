@@ -59,6 +59,7 @@
             </div>
             <button class="btn-cadastro" onclick="cadastrar()">Enviar</button>
         </div>
+        <div id="mensagem_erro"></div>
     </div>
 
 
@@ -89,6 +90,9 @@
         else {
             // setInterval(sumirMensagem, 5000)
         }
+        console.log(artistaVar);
+
+        console.log(artista.value);
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -104,12 +108,9 @@
                 senhaServer: senhaVar,
                 cpfServer: cpfVar,
                 telServer: telVar,
-                artistaServer: artistaVar
+                fkArtistaServer: artistaVar
             })
         }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
             if (resposta.ok) {
                 // cardErro.style.display = "block";
 
