@@ -205,7 +205,7 @@ button {
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px solid #FFC727;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
@@ -219,7 +219,7 @@ input {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: white;
   width: 120px;
   align-self: center;
   margin-top: 5px;
@@ -293,7 +293,7 @@ input {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #FFC727;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -306,8 +306,8 @@ input {
   width: 40%;
   padding: 16px 0px;
   border: solid;
-  border-color: #FFFF00;
-  color: #FFFF00;
+  border-color: #FFC727;
+  color: #FFC727;
   background-color: white;
   margin: 25px;
   border-radius: 8px;
@@ -326,10 +326,10 @@ input {
 .btn-nav-white {
     width: 40%;
     padding: 16px 0px;
-    border: solid;
-    border-color: #FFFF00;
+    /* border: solid; */
+    /* border-color: #FFFF00; */
     color: white;
-    background-color: #FFFF00;
+    background-color: #FFC727;
     margin: 25px;
     border-radius: 8px;
     outline: none;
@@ -341,7 +341,7 @@ input {
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: white;
   padding: 0;
   margin: 0;
 }
@@ -356,7 +356,7 @@ input {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: red;
   color: white;
   border-radius: 10px;
   text-align: center;
