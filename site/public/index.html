@@ -43,10 +43,22 @@
         <div class="text">Mano Brown</div>
       </div>
 
+      <div class="mySlides fade">
+        <img src="imgHome/img4.jfif">
+        <div class="text">Tyler, The Creator</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="imgHome/img5.jpg">
+        <div class="text">Froid</div>
+      </div>
+
     </div>
     <br>
 
     <div class="bolas">
+      <span class="dot"></span>
+      <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
@@ -58,7 +70,7 @@
         Venha conhecer o melhor site de Hip Hop do mundo.
       </p>
 
-      <button href="cadastro.html">Saiba mais</button>
+      <button class="btn" onclick="pagina()">Saiba mais</button>
 
     </div>
 
@@ -107,5 +119,9 @@
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
     setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+
+  function pagina() {
+    window.location = "cadastro.html";
   }
 </script>
