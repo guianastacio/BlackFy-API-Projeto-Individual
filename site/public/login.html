@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,50 +8,51 @@
     <link rel="stylesheet" href="css/login.css">
     <title>Login</title>
 </head>
+
 <body>
     <nav>
-        <label class="logo" ><img src="imgOrigem/Black Fy.svg"></label>
+        <label class="logo"><img src="imgOrigem/Black Fy.svg"></label>
         <ul>
             <li><a class="txt-nav" href="index.html">HOME</a></li>
             <li><a class="txt-nav" href="index.html#motivos">MOTIVO</a></li>
             <li><a class="txt-nav" href="origem.html">ORIGEM</a></li>
-            <li><b  id="barra" >|</b></li>
+            <li><b id="barra">|</b></li>
             <li><a class="txt-nav" href="cadastro.html">CADASTRO </a></li>
             <li><a class="txt-nav" href="#"> Entrar </a></li>
         </ul>
-        </nav> 
-  <div class="login">
-      <div class="Left-login">
-       <img src="imglogin/more-music-animate.svg">
-      </div>
+    </nav>
+    <div class="login">
+        <div class="Left-login">
+            <img src="imglogin/more-music-animate.svg">
+        </div>
 
-      <div class="Right-login">
-       <div class="Card-login">
-           <h1>Faça login:</h1>
-           <div class="Textfield">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email_input">
-           </div>
-           <div class="Textfield">
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha_input">
-           </div>
-          
-           <button class="btn-login" onclick="entrar()">Enviar</button>
+        <div class="Right-login">
+            <div class="Card-login">
+                <h1>Faça login:</h1>
+                <div class="Textfield">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email_input">
+                </div>
+                <div class="Textfield">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha_input">
+                </div>
 
-       </div>
-      </div>
+                <button class="btn-login" onclick="entrar()">Enviar</button>
 
-  </div>
-    
+            </div>
+        </div>
+
+    </div>
+
 </body>
-</html> 
+
+</html>
 
 <script>
 
 
     function entrar() {
-        // aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -58,11 +60,11 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            // finalizarAguardar();
+            finalizarAguardar();
             return false;
         }
         else {
-            // setInterval(sumirMensagem, 5000)
+            setInterval(sumirMensagem, 5000)
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -89,7 +91,7 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.fkusuario;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
@@ -103,7 +105,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    // finalizarAguardar(texto);
+                    finalizarAguardar(texto);
                 });
             }
 
@@ -114,8 +116,10 @@
         return false;
     }
 
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none"
-    // }
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
 
 </script>
