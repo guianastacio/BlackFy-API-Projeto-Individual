@@ -22,7 +22,7 @@
 
 </head>
 
-<body onload="validarSessao(), atualizarFeed()">
+<body onload="validarSessao(), atualizarFeed(), atualizarGrafico()">
 
     <div class="janela">
         <div class="header-left">
@@ -86,7 +86,7 @@
 
     let proximaAtualizacao;
 
-    window.onload = obterDadosGrafico();
+    // window.onload = obterDadosGrafico();
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
