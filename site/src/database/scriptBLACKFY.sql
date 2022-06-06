@@ -22,8 +22,9 @@ FOREIGN KEY (fkArtista) REFERENCES artista(idartista)
 
 CREATE TABLE postagem(
 idpostagem INT PRIMARY KEY AUTO_INCREMENT,
+titulo VARCHAR(100),
 descricao VARCHAR(250),
-dtpost DATE,
+dtpost DATETIME DEFAULT CURRENT_TIMESTAMP,
 fkusuario INT,
 FOREIGN KEY (fkusuario) REFERENCES usuario(idUsuario)
 );
@@ -60,10 +61,10 @@ INSERT INTO usuario(nome,email,senha,cpf,telefone,fkartista) VALUE
 ('Rafael','rafael@email.com','123','59022211100',985691212,4),
 ('Fernando','Fernando@email.com','12345','77788899911',992691276,5);
 
-INSERT INTO postagem(descricao,dtpost,fkusuario) VALUE
-('Eu amo os hip hop dos anos 90','2022-01-03',1),
-('Muito bom ouvir rap de domingo','2021-12-12',2),
-('Esse ano vou pro show do racionais','2022-03-02',3);
+INSERT INTO postagem(titulo,descricao,fkusuario) VALUE
+('noatalgia','Eu amo os hip hop dos anos 90',1),
+('reflexão','Muito bom ouvir rap de domingo',2),
+('Promessa','Esse ano vou pro show do racionais',3);
 
 INSERT INTO musica(nomemusica,artista,genero,fkuser) VALUE
 ('Peita de dar rolê','Froid','Hip Hop',1),
@@ -91,3 +92,5 @@ SELECT count(fkusuarioplay) AS 'Soma dos usuarios',count(fkmusicaPlay) AS 'Soma 
 JOIN musica ON musica.idmusica = playlist.fkmusicaplay;
 
 SELECT artista.nome , COUNT(Fkartista) AS votos from usuario JOIN artista ON idartista = fkartista GROUP BY fkartista;
+
+SELECT postagem.idpostagem,usuario.nome, postagem.titulo ,postagem.descricao,postagem.fkusuario FROM postagem JOIN usuario ON usuario.idusuario = postagem.fkusuario  WHERE postagem.descricao LIKE 'E%';
